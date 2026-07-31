@@ -145,23 +145,8 @@
         }
         .nav-content {
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-end;
             align-items: center;
-        }
-        .logo {
-            font-family: var(--font-serif);
-            font-size: 1.5rem;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            color: var(--text-primary);
-            cursor: pointer;
-            transition: color var(--transition);
-        }
-        .logo:hover {
-            color: var(--accent);
-        }
-        .logo span {
-            color: var(--accent);
         }
         .nav-links {
             display: flex;
@@ -873,11 +858,10 @@
 <body>
 
     <!-- ==========================================
-    NAVIGATION RESPONSIVE
+    NAVIGATION RESPONSIVE (SANS LOGO)
     ========================================== -->
     <nav id="navbar">
         <div class="container nav-content">
-            <div class="logo" id="logo">Cedrick <span>Yvan</span></div>
             <ul class="nav-links" id="nav-links">
                 <li><button class="tab-link active" data-tab="accueil">Accueil</button></li>
                 <li><button class="tab-link" data-tab="about">À Propos</button></li>
@@ -1270,7 +1254,6 @@
             contact: document.getElementById('contact')
         };
         const navLinks = document.getElementById('nav-links');
-        const logo = document.getElementById('logo');
         const hamburger = document.getElementById('hamburger');
         const cvModal = document.getElementById('cvModal');
 
@@ -1311,10 +1294,6 @@
         tabs.forEach(tab => {
             tab.addEventListener('click', () => switchTab(tab.dataset.tab));
         });
-
-        if (logo) {
-            logo.addEventListener('click', () => switchTab('accueil'));
-        }
 
         hamburger.addEventListener('click', (e) => {
             e.stopPropagation();
