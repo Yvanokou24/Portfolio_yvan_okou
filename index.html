@@ -209,14 +209,13 @@
             font-size: 1rem;
             cursor: pointer;
             color: var(--text-primary);
-            padding: 6px 16px;
-            border-radius: 40px;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
             transition: background var(--transition), border-color var(--transition);
             display: flex;
             align-items: center;
-            gap: 8px;
-            font-family: var(--font-sans);
-            font-weight: 400;
+            justify-content: center;
         }
         #theme-toggle:hover {
             background: var(--bg-secondary);
@@ -791,6 +790,7 @@
             color: var(--accent);
         }
 
+        /* MEDIA QUERIES & IMPRESSION */
         @media (max-width: 900px) {
             .hero-grid {
                 grid-template-columns: 1fr;
@@ -842,6 +842,32 @@
                 padding: 25px;
             }
         }
+
+        @media print {
+            body * {
+                visibility: hidden;
+            }
+            .cv-modal, .cv-modal.active {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: auto;
+                background: none;
+                padding: 0;
+            }
+            .cv-modal-card, .cv-modal-card * {
+                visibility: visible;
+            }
+            .cv-modal-card {
+                box-shadow: none;
+                border: none;
+                max-height: none;
+            }
+            .cv-modal-close, .cv-actions {
+                display: none !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -851,6 +877,7 @@
     ========================================== -->
     <nav id="navbar">
         <div class="container nav-content">
+            <div class="logo" id="logo">Cedrick <span>Yvan</span></div>
             <ul class="nav-links" id="nav-links">
                 <li><button class="tab-link active" data-tab="accueil">Accueil</button></li>
                 <li><button class="tab-link" data-tab="about">À Propos</button></li>
@@ -958,7 +985,7 @@
                 <div class="section-divider"></div>
             </div>
             
-            <!-- PROJET N°01 : CLIQUABLE AVEC LIEN VERS WEBMAPPING -->
+            <!-- PROJET N°01 -->
             <div class="project-feature">
                 <a href="https://yvanokou24.github.io/yvan-mandoh__/" target="_blank" class="project-visual clickable-visual" title="Ouvrir la plateforme Webmapping">
                     <i class="fas fa-map-marked-alt"></i>
@@ -1156,7 +1183,7 @@
                         <strong>Cartographie, analyse spatiale et Webmapping :</strong>
                         <ul>
                             <li>Numérisation et structuration des activités commerciales de la zone Abobo Houphouët-Boigny (Rue Professeur Koné Tiémoman).</li>
-                            <li>Collecte de données spatiales sur le terrain, modélisation PostGIS et publication de carte interactive (<a href="https://yvanokou24.github.io/yvanmandoh__/" target="_blank" style="color: var(--accent); font-weight: 600;">Consulter en ligne</a>).</li>
+                            <li>Collecte de données spatiales sur le terrain, modélisation PostGIS et publication de carte interactive (<a href="https://yvanokou24.github.io/yvan-mandoh__/" target="_blank" style="color: var(--accent); font-weight: 600;">Consulter en ligne</a>).</li>
                         </ul>
                     </div>
                 </div>
@@ -1285,7 +1312,9 @@
             tab.addEventListener('click', () => switchTab(tab.dataset.tab));
         });
 
-        logo.addEventListener('click', () => switchTab('accueil'));
+        if (logo) {
+            logo.addEventListener('click', () => switchTab('accueil'));
+        }
 
         hamburger.addEventListener('click', (e) => {
             e.stopPropagation();
@@ -1304,14 +1333,15 @@
             else navbar.classList.remove('scrolled');
         });
 
+        /* GESTION THÈME SOMBRE / CLAIR */
         const toggleBtn = document.getElementById('theme-toggle');
         const currentTheme = localStorage.getItem('theme') || 'light';
         
         if (currentTheme === 'dark') {
             document.documentElement.setAttribute('data-theme', 'dark');
-            toggleBtn.innerHTML = '<i class="fas fa-sun"></i> Lumière';
+            toggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
         } else {
-            toggleBtn.innerHTML = '<i class="fas fa-moon"></i> Sombre';
+            toggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
         }
 
         toggleBtn.addEventListener('click', () => {
@@ -1319,11 +1349,11 @@
             if (theme === 'dark') {
                 document.documentElement.removeAttribute('data-theme');
                 localStorage.setItem('theme', 'light');
-                toggleBtn.innerHTML = '<i class="fas fa-moon"></i> Sombre';
+                toggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
             } else {
                 document.documentElement.setAttribute('data-theme', 'dark');
                 localStorage.setItem('theme', 'dark');
-                toggleBtn.innerHTML = '<i class="fas fa-sun"></i> Lumière';
+                toggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
             }
         });
 
