@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Okou Cedrick Yvan – Spécialiste SIG, Designer &amp; Développeur Web et Mobile</title>
+    <title>Okou Cedrick Yvan – Géomaticien, Designer &amp; Développeur Mobile</title>
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
@@ -106,6 +106,12 @@
         .section-title span {
             color: var(--accent);
             font-style: italic;
+        }
+        .section-subtitle {
+            color: var(--text-secondary);
+            font-size: clamp(0.95rem, 2vw, 1.1rem);
+            max-width: 560px;
+            font-weight: 400;
         }
         .section-divider {
             width: 60px;
@@ -218,7 +224,7 @@
         }
 
         /* ============================================
-           PAGE D'ACCUEIL
+           PAGE D'ACCUEIL FLUIDE & RESPONSIVE
            ============================================ */
         #accueil {
             min-height: 100vh;
@@ -226,6 +232,10 @@
             align-items: center;
             padding: clamp(100px, 15vh, 140px) 0 clamp(40px, 8vh, 80px);
             background: var(--bg-primary);
+        }
+
+        #accueil.hidden {
+            display: none;
         }
 
         .hero-grid {
@@ -321,7 +331,7 @@
         }
 
         /* ============================================
-           CONTENU
+           AUTRES PAGES & CONTENU
            ============================================ */
         #about, #competences {
             background: var(--bg-primary);
@@ -371,6 +381,16 @@
             background: var(--accent-hover);
             transform: translateY(-3px);
             box-shadow: 0 12px 35px rgba(200, 122, 110, 0.25);
+        }
+        .btn-outline {
+            background: transparent;
+            color: var(--text-primary) !important;
+            border: 2px solid var(--border-color);
+        }
+        .btn-outline:hover {
+            background: var(--text-primary);
+            color: var(--bg-primary) !important;
+            border-color: var(--text-primary);
         }
 
         .about-grid {
@@ -569,6 +589,19 @@
             font-size: 1.2rem;
             flex-shrink: 0;
         }
+        .quote-block {
+            background: var(--bg-card);
+            padding: 24px 30px;
+            border-radius: 12px;
+            border-left: 4px solid var(--accent);
+            box-shadow: var(--shadow);
+            margin-bottom: 20px;
+        }
+        .quote-block p {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            font-style: italic;
+        }
 
         /* FOOTER */
         footer {
@@ -647,7 +680,9 @@
 </head>
 <body>
 
-    <!-- NAVIGATION RESPONSIVE -->
+    <!-- ==========================================
+    NAVIGATION RESPONSIVE (SANS LOGO)
+    ========================================== -->
     <nav id="navbar">
         <div class="container nav-content">
             <ul class="nav-links" id="nav-links">
@@ -668,8 +703,10 @@
         </div>
     </nav>
 
-    <!-- PAGE D'ACCUEIL -->
-    <section id="accueil" class="tab-content active" style="padding-top: clamp(100px, 15vh, 140px);">
+    <!-- ==========================================
+    PAGE D'ACCUEIL
+    ========================================== -->
+    <section id="accueil">
         <div class="container hero-grid">
             <div class="hero-text">
                 <div class="badge">Géomaticien, Designer &amp; Développeur Mobile</div>
@@ -692,7 +729,11 @@
         </div>
     </section>
 
-    <!-- À PROPOS -->
+    <!-- ==========================================
+    CONTENU DES ONGLETS
+    ========================================== -->
+
+    <!-- ===== À PROPOS ===== -->
     <section id="about" class="tab-content">
         <div class="container">
             <div class="about-grid">
@@ -741,7 +782,7 @@
         </div>
     </section>
 
-    <!-- PROJETS -->
+    <!-- ===== PROJETS ===== -->
     <section id="projets" class="tab-content">
         <div class="container">
             <div class="section-header" style="margin-bottom: 40px;">
@@ -757,221 +798,263 @@
                     <span class="overlay-badge">Webmapping</span>
                 </a>
                 <div class="project-content">
-                    <span class="section-label">Projet 01</span>
-                    <h3>Abobo Trade Map</h3>
+                    <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); font-weight: 600;">Projet n°01</span>
+                    <h3 style="font-family: var(--font-serif); font-size: 2rem; margin: 5px 0 15px;">
+                        <a href="https://yvanokou24.github.io/yvan-mandoh__/" target="_blank" style="color: inherit;">
+                            Abobo <span style="color: var(--accent);">Trade Map</span>
+                        </a>
+                    </h3>
                     <p style="color: var(--text-secondary); margin-bottom: 15px;">
-                        Plateforme de Webmapping interactive dédiée à la visualisation et à la cartographie des activités commerciales dans la commune d'Abobo (Houphouët-Boigny).
+                        Plateforme de Webmapping interactive permettant de visualiser, numériser et structurer
+                        la cartographie des activités commerciales de la zone Abobo Houphouët-Boigny.
                     </p>
                     <div class="tags">
-                        <span>Webmapping</span>
+                        <span>Leaflet</span>
                         <span>QGIS</span>
                         <span>PostGIS</span>
-                        <span>Analyse Spatiale</span>
+                        <span>Webmapping</span>
                     </div>
-                    <a href="https://yvanokou24.github.io/yvan-mandoh__/" target="_blank" class="project-link-btn">
-                        <span>Explorer la carte</span>
-                        <i class="fas fa-external-link-alt"></i>
-                    </a>
+                    <div>
+                        <a href="https://yvanokou24.github.io/yvan-mandoh__/" target="_blank" class="project-link-btn">
+                            <i class="fas fa-external-link-alt"></i> Consulter la carte interactive
+                        </a>
+                    </div>
                 </div>
             </div>
 
             <!-- PROJET N°02 -->
             <div class="project-feature reverse">
                 <div class="project-visual">
-                    <i class="fas fa-mobile-alt"></i>
-                    <span class="overlay-badge">Mobile Android</span>
+                    <i class="fas fa-recycle"></i>
+                    <span class="overlay-badge" style="background: #D4A373;">En cours</span>
                 </div>
                 <div class="project-content">
-                    <span class="section-label">Projet 02</span>
-                    <h3>SaluBriCI</h3>
+                    <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); font-weight: 600;">Projet n°02</span>
+                    <h3 style="font-family: var(--font-serif); font-size: 2rem; margin: 5px 0 15px;">Salubri<span style="color: var(--accent);">CI</span></h3>
                     <p style="color: var(--text-secondary); margin-bottom: 15px;">
-                        Application mobile participative permettant aux citoyens de signaler facilement les dépôts sauvages d'ordures via des photos géolocalisées.
+                        Application mobile Android géospatiale permettant aux citoyens de signaler
+                        les dépôts sauvages de déchets en prenant une photo géolocalisée.
                     </p>
                     <div class="tags">
                         <span>Android</span>
-                        <span>UI/UX Design</span>
-                        <span>GPS / Géolocalisation</span>
+                        <span>Figma</span>
+                        <span>GPS</span>
                     </div>
-                    <button class="project-link-btn" onclick="switchTab('contact')">
-                        <span>En savoir plus</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </button>
                 </div>
             </div>
 
-            <!-- PROJET N°03 -->
+            <!-- PROJET N°03 : WATARA -->
             <div class="project-feature">
-                <div class="project-visual">
-                    <i class="fas fa-drafting-compass"></i>
-                    <span class="overlay-badge">Prototypage UI/UX</span>
-                </div>
+                <a href="https://www.figma.com/proto/NAdFJ6GIdjLNtcDCPc70hV/Sans-titre?node-id=692-956&t=hDbGXAZ0AycLj70t-0&scaling=scale-down&content-scaling=fixed&page-id=491%3A2" target="_blank" class="project-visual clickable-visual" title="Tester le prototype Figma de WATARA">
+                    <i class="fas fa-seedling"></i>
+                    <span class="overlay-badge" style="background: #2A9D8F;">UI/UX &amp; AgTech</span>
+                </a>
                 <div class="project-content">
-                    <span class="section-label">Projet 03</span>
-                    <h3>Watara</h3>
+                    <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); font-weight: 600;">Projet n°03</span>
+                    <h3 style="font-family: var(--font-serif); font-size: 2rem; margin: 5px 0 15px;">
+                        <a href="https://www.figma.com/proto/NAdFJ6GIdjLNtcDCPc70hV/Sans-titre?node-id=692-956&t=hDbGXAZ0AycLj70t-0&scaling=scale-down&content-scaling=fixed&page-id=491%3A2" target="_blank" style="color: inherit;">
+                            WATARA <span style="color: var(--accent);">App</span>
+                        </a>
+                    </h3>
                     <p style="color: var(--text-secondary); margin-bottom: 15px;">
-                        Prototype d'application axé sur une interface fluide et intuitive pour l'interaction avec des services géospatiaux.
+                        Prototype interactif haute fidélité d'une plateforme agricole intelligente. WATARA combine capteurs IoT et IA pour optimiser la gestion de l'eau, maximiser les rendements et promouvoir une agriculture durable.
                     </p>
                     <div class="tags">
+                        <span>Figma</span>
                         <span>UI/UX Design</span>
-                        <span>Prototypage</span>
+                        <span>Prototypage Interactif</span>
+                        <span>AgTech / IoT</span>
                     </div>
-                    <button class="project-link-btn" onclick="switchTab('contact')">
-                        <span>Voir la maquette</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </button>
+                    <div>
+                        <a href="https://www.figma.com/proto/NAdFJ6GIdjLNtcDCPc70hV/Sans-titre?node-id=692-956&t=hDbGXAZ0AycLj70t-0&scaling=scale-down&content-scaling=fixed&page-id=491%3A2" target="_blank" class="project-link-btn">
+                            <i class="fab fa-figma"></i> Tester le prototype interactif
+                        </a>
+                    </div>
                 </div>
             </div>
-
         </div>
     </section>
 
-    <!-- COMPÉTENCES -->
+    <!-- ===== COMPÉTENCES ===== -->
     <section id="competences" class="tab-content">
         <div class="container">
-            <div class="section-header" style="margin-bottom: 40px;">
-                <span class="section-label">Savoir-faire</span>
-                <h2 class="section-title">Mes <span>Compétences</span></h2>
+            <div style="margin-bottom: 40px;">
+                <span class="section-label">Expertise</span>
+                <h2 class="section-title">Compétences &amp; <span>Savoir-faire</span></h2>
                 <div class="section-divider"></div>
             </div>
-
+            
             <div class="skills-grid-editorial">
                 <div class="skill-block">
-                    <h4><i class="fas fa-map-marked-alt"></i> SIG &amp; Géomatique</h4>
+                    <h4><i class="fas fa-globe-africa"></i> SIG &amp; Carto</h4>
                     <ul>
                         <li>QGIS</li>
-                        <li>PostGIS</li>
-                        <li>Analyse spatiale</li>
-                        <li>Cartographie</li>
-                        <li>Webmapping</li>
+                        <li>ArcGIS Online</li>
+                        <li>KoboToolbox</li>
+                        <li>PostGIS / SQL</li>
+                        <li>Leaflet</li>
                     </ul>
                 </div>
                 <div class="skill-block">
-                    <h4><i class="fas fa-mobile-alt"></i> Développement Mobile</h4>
+                    <h4><i class="fas fa-pencil-ruler"></i> UI/UX Design</h4>
                     <ul>
-                        <li>Android</li>
-                        <li>Géolocalisation GPS</li>
-                        <li>Intégration d'API</li>
-                    </ul>
-                </div>
-                <div class="skill-block">
-                    <h4><i class="fas fa-paint-brush"></i> UI/UX &amp; Design</h4>
-                    <ul>
+                        <li>Figma</li>
                         <li>Prototypage</li>
-                        <li>Design d'interfaces</li>
-                        <li>Ergonomie Web &amp; Mobile</li>
+                        <li>UX Research</li>
+                        <li>Ergonomie</li>
+                    </ul>
+                </div>
+                <div class="skill-block">
+                    <h4><i class="fas fa-code"></i> Dev Mobile &amp; Web</h4>
+                    <ul>
+                        <li>Android (Java/Kotlin)</li>
+                        <li>Développement Mobile</li>
+                        <li>HTML5 / CSS3</li>
+                        <li>JavaScript</li>
+                    </ul>
+                </div>
+                <div class="skill-block">
+                    <h4><i class="fas fa-brain"></i> Soft Skills</h4>
+                    <ul>
+                        <li>Rigueur</li>
+                        <li>Gestion de projet</li>
+                        <li>Autonomie</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CONTACT -->
+    <!-- ===== CONTACT ===== -->
     <section id="contact" class="tab-content">
-        <div class="container">
-            <div class="section-header" style="margin-bottom: 40px;">
-                <span class="section-label">Échangeons</span>
-                <h2 class="section-title">Me <span>Contacter</span></h2>
+        <div class="container contact-grid">
+            <div>
+                <span class="section-label">Collaboration</span>
+                <h2 class="section-title">Discutons <span>ensemble</span></h2>
                 <div class="section-divider"></div>
-            </div>
-
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <p style="margin-bottom: 20px; color: var(--text-secondary);">
-                        Vous avez un projet de géomatique, de Webmapping ou de développement d'application mobile ? N'hésitez pas à me contacter.
-                    </p>
-                    <div class="contact-list">
-                        <div class="contact-item">
-                            <i class="fas fa-user"></i>
-                            <span>Okou Cedrick Yvan</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-graduation-cap"></i>
-                            <span>Licence 3 en Sciences et Technologies Géospatiales</span>
-                        </div>
+                <p style="color: var(--text-secondary); margin-bottom: 25px;">
+                    Un projet de cartographie, une application mobile ou une simple
+                    discussion autour de la donnée spatiale ? N'hésitez pas.
+                </p>
+                <div class="contact-list">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:yvanokou8@gmail.com">yvanokou8@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+2250544862381">+225 05 44 86 23 81</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <a href="https://ci.linkedin.com/in/yvan-okou-52164b421" target="_blank">linkedin.com/in/yvan-okou-52164b421</a>
                     </div>
                 </div>
             </div>
+            
+            <div>
+                <div class="quote-block">
+                    <p>“ La cartographie est l'art de rendre visible l'invisible, de donner une voix aux territoires silencieux. ”</p>
+                    <div style="margin-top: 10px; font-weight: 600; font-size: 0.9rem;">— Okou Cedrick Yvan</div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- ==========================================
+    FOOTER
+    ========================================== -->
     <footer>
         <div class="container">
             <div class="socials">
-                <a href="https://github.com/yvanokou24" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://ci.linkedin.com/in/yvan-okou-52164b421" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:yvanokou8@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
             </div>
-            <p>&copy; Okou Cedrick Yvan. Tous droits réservés.</p>
+            <p>&copy; 2026 Okou Cedrick Yvan.</p>
         </div>
     </footer>
 
-    <!-- JAVASCRIPT -->
+    <!-- ==========================================
+    JAVASCRIPT ACCESSIBLE ET ADAPTATIF
+    ========================================== -->
     <script>
-        // Gestion des onglets
+        const tabs = document.querySelectorAll('.tab-link');
+        const accueil = document.getElementById('accueil');
+        const tabContents = {
+            about: document.getElementById('about'),
+            projets: document.getElementById('projets'),
+            competences: document.getElementById('competences'),
+            contact: document.getElementById('contact')
+        };
+        const navLinks = document.getElementById('nav-links');
+        const hamburger = document.getElementById('hamburger');
+
         function switchTab(tabId) {
-            const tabs = document.querySelectorAll('.tab-content');
-            const links = document.querySelectorAll('.tab-link');
+            if (tabId === 'accueil') {
+                accueil.classList.remove('hidden');
+                document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            } else {
+                accueil.classList.add('hidden');
+                document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+                if (tabContents[tabId]) tabContents[tabId].classList.add('active');
+            }
 
             tabs.forEach(tab => {
                 tab.classList.remove('active');
+                if (tab.dataset.tab === tabId) tab.classList.add('active');
             });
 
-            links.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('data-tab') === tabId) {
-                    link.classList.add('active');
-                }
-            });
-
-            const targetTab = document.getElementById(tabId);
-            if (targetTab) {
-                targetTab.classList.add('active');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            }
-
-            // Fermer le menu mobile si ouvert
-            document.getElementById('nav-links').classList.remove('open');
+            navLinks.classList.remove('open');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // Écouteurs d'événements sur la navigation
-        document.querySelectorAll('.tab-link').forEach(button => {
-            button.addEventListener('click', () => {
-                const tabId = button.getAttribute('data-tab');
-                switchTab(tabId);
-            });
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => switchTab(tab.dataset.tab));
         });
 
-        // Toggle Thème (Clair / Sombre)
-        const themeToggleBtn = document.getElementById('theme-toggle');
-        themeToggleBtn.addEventListener('click', () => {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const icon = themeToggleBtn.querySelector('i');
-            
-            if (currentTheme === 'dark') {
-                document.documentElement.removeAttribute('data-theme');
-                icon.className = 'fas fa-moon';
-            } else {
-                document.documentElement.setAttribute('data-theme', 'dark');
-                icon.className = 'fas fa-sun';
-            }
-        });
-
-        // Menu Hamburger Mobile
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.getElementById('nav-links');
-
-        hamburger.addEventListener('click', () => {
+        hamburger.addEventListener('click', (e) => {
+            e.stopPropagation();
             navLinks.classList.toggle('open');
         });
 
-        // Effet Navbar au Scroll
-        window.addEventListener('scroll', () => {
-            const nav = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
+        document.addEventListener('click', (e) => {
+            if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+                navLinks.classList.remove('open');
             }
         });
+
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 40) navbar.classList.add('scrolled');
+            else navbar.classList.remove('scrolled');
+        });
+
+        /* GESTION THÈME SOMBRE / CLAIR */
+        const toggleBtn = document.getElementById('theme-toggle');
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        
+        if (currentTheme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            toggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
+        } else {
+            toggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
+        }
+
+        toggleBtn.addEventListener('click', () => {
+            const theme = document.documentElement.getAttribute('data-theme');
+            if (theme === 'dark') {
+                document.documentElement.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'light');
+                toggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                toggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
+            }
+        });
+
+        window.switchTab = switchTab;
     </script>
+
 </body>
 </html>
