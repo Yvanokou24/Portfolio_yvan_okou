@@ -107,6 +107,12 @@
             color: var(--accent);
             font-style: italic;
         }
+        .section-subtitle {
+            color: var(--text-secondary);
+            font-size: clamp(0.95rem, 2vw, 1.1rem);
+            max-width: 560px;
+            font-weight: 400;
+        }
         .section-divider {
             width: 60px;
             height: 2px;
@@ -218,7 +224,7 @@
         }
 
         /* ============================================
-           PAGE D'ACCUEIL
+           PAGE D'ACCUEIL FLUIDE & RESPONSIVE
            ============================================ */
         #accueil {
             min-height: 100vh;
@@ -226,6 +232,10 @@
             align-items: center;
             padding: clamp(100px, 15vh, 140px) 0 clamp(40px, 8vh, 80px);
             background: var(--bg-primary);
+        }
+
+        #accueil.hidden {
+            display: none;
         }
 
         .hero-grid {
@@ -321,7 +331,7 @@
         }
 
         /* ============================================
-           CONTENU
+           AUTRES PAGES & CONTENU
            ============================================ */
         #about, #competences {
             background: var(--bg-primary);
@@ -371,6 +381,16 @@
             background: var(--accent-hover);
             transform: translateY(-3px);
             box-shadow: 0 12px 35px rgba(200, 122, 110, 0.25);
+        }
+        .btn-outline {
+            background: transparent;
+            color: var(--text-primary) !important;
+            border: 2px solid var(--border-color);
+        }
+        .btn-outline:hover {
+            background: var(--text-primary);
+            color: var(--bg-primary) !important;
+            border-color: var(--text-primary);
         }
 
         .about-grid {
@@ -569,6 +589,167 @@
             font-size: 1.2rem;
             flex-shrink: 0;
         }
+        .quote-block {
+            background: var(--bg-card);
+            padding: 24px 30px;
+            border-radius: 12px;
+            border-left: 4px solid var(--accent);
+            box-shadow: var(--shadow);
+            margin-bottom: 20px;
+        }
+        .quote-block p {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            font-style: italic;
+        }
+
+        /* ============================================
+           MODALE CV DÉTAILLÉ
+           ============================================ */
+        .cv-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(8px);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        .cv-modal.active {
+            display: flex;
+        }
+        .cv-modal-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            max-width: 800px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+            position: relative;
+            padding: 40px;
+        }
+        .cv-modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--bg-secondary);
+            border: none;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+        .cv-modal-close:hover {
+            background: var(--accent);
+            color: #fff;
+        }
+        .cv-header {
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 20px;
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .cv-header h2 {
+            font-family: var(--font-serif);
+            font-size: 2.2rem;
+            color: var(--text-primary);
+        }
+        .cv-header h2 span {
+            color: var(--accent);
+        }
+        .cv-header .cv-subtitle {
+            font-weight: 600;
+            color: var(--accent);
+            font-size: 1.05rem;
+            margin-top: 4px;
+        }
+        .cv-contact-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 12px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+        .cv-contact-pills span {
+            background: var(--bg-secondary);
+            padding: 4px 12px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .cv-section {
+            margin-bottom: 25px;
+        }
+        .cv-section-title {
+            font-family: var(--font-serif);
+            font-size: 1.3rem;
+            color: var(--text-primary);
+            border-bottom: 1.5px solid var(--accent);
+            padding-bottom: 6px;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .cv-section-title i {
+            color: var(--accent);
+            font-size: 1.1rem;
+        }
+        .cv-item {
+            margin-bottom: 14px;
+        }
+        .cv-item-header {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+        .cv-item-date {
+            color: var(--accent);
+            font-size: 0.85rem;
+        }
+        .cv-item-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+        .cv-item-desc ul {
+            padding-left: 18px;
+            margin-top: 6px;
+        }
+        .cv-item-desc li {
+            margin-bottom: 4px;
+        }
+        .cv-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            justify-content: flex-end;
+            flex-wrap: wrap;
+        }
 
         /* FOOTER */
         footer {
@@ -594,7 +775,7 @@
             color: var(--accent);
         }
 
-        /* MEDIA QUERIES */
+        /* MEDIA QUERIES & IMPRESSION */
         @media (max-width: 900px) {
             .hero-grid {
                 grid-template-columns: 1fr;
@@ -642,12 +823,43 @@
             .contact-list .contact-item {
                 border-radius: 12px;
             }
+            .cv-modal-card {
+                padding: 25px;
+            }
+        }
+
+        @media print {
+            body * {
+                visibility: hidden;
+            }
+            .cv-modal, .cv-modal.active {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: auto;
+                background: none;
+                padding: 0;
+            }
+            .cv-modal-card, .cv-modal-card * {
+                visibility: visible;
+            }
+            .cv-modal-card {
+                box-shadow: none;
+                border: none;
+                max-height: none;
+            }
+            .cv-modal-close, .cv-actions {
+                display: none !important;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- NAVIGATION RESPONSIVE -->
+    <!-- ==========================================
+    NAVIGATION RESPONSIVE (SANS LOGO)
+    ========================================== -->
     <nav id="navbar">
         <div class="container nav-content">
             <ul class="nav-links" id="nav-links">
@@ -668,8 +880,10 @@
         </div>
     </nav>
 
-    <!-- PAGE D'ACCUEIL -->
-    <section id="accueil" class="tab-content active" style="padding-top: clamp(100px, 15vh, 140px);">
+    <!-- ==========================================
+    PAGE D'ACCUEIL
+    ========================================== -->
+    <section id="accueil">
         <div class="container hero-grid">
             <div class="hero-text">
                 <div class="badge">Géomaticien, Designer &amp; Développeur Mobile</div>
@@ -681,6 +895,7 @@
                 </p>
                 <div class="btn-group">
                     <button class="btn" onclick="switchTab('projets')">Voir mes projets</button>
+                    <button class="btn btn-outline" onclick="openCvModal()">Voir mon CV</button>
                 </div>
             </div>
             
@@ -692,7 +907,11 @@
         </div>
     </section>
 
-    <!-- À PROPOS -->
+    <!-- ==========================================
+    CONTENU DES ONGLETS
+    ========================================== -->
+
+    <!-- ===== À PROPOS ===== -->
     <section id="about" class="tab-content">
         <div class="container">
             <div class="about-grid">
@@ -741,7 +960,7 @@
         </div>
     </section>
 
-    <!-- PROJETS -->
+    <!-- ===== PROJETS ===== -->
     <section id="projets" class="tab-content">
         <div class="container">
             <div class="section-header" style="margin-bottom: 40px;">
@@ -754,224 +973,4 @@
             <div class="project-feature">
                 <a href="https://yvanokou24.github.io/yvan-mandoh__/" target="_blank" class="project-visual clickable-visual" title="Ouvrir la plateforme Webmapping">
                     <i class="fas fa-map-marked-alt"></i>
-                    <span class="overlay-badge">Webmapping</span>
-                </a>
-                <div class="project-content">
-                    <span class="section-label">Projet 01</span>
-                    <h3>Abobo Trade Map</h3>
-                    <p style="color: var(--text-secondary); margin-bottom: 15px;">
-                        Plateforme de Webmapping interactive dédiée à la visualisation et à la cartographie des activités commerciales dans la commune d'Abobo (Houphouët-Boigny).
-                    </p>
-                    <div class="tags">
-                        <span>Webmapping</span>
-                        <span>QGIS</span>
-                        <span>PostGIS</span>
-                        <span>Analyse Spatiale</span>
-                    </div>
-                    <a href="https://yvanokou24.github.io/yvan-mandoh__/" target="_blank" class="project-link-btn">
-                        <span>Explorer la carte</span>
-                        <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- PROJET N°02 -->
-            <div class="project-feature reverse">
-                <div class="project-visual">
-                    <i class="fas fa-mobile-alt"></i>
-                    <span class="overlay-badge">Mobile Android</span>
-                </div>
-                <div class="project-content">
-                    <span class="section-label">Projet 02</span>
-                    <h3>SaluBriCI</h3>
-                    <p style="color: var(--text-secondary); margin-bottom: 15px;">
-                        Application mobile participative permettant aux citoyens de signaler facilement les dépôts sauvages d'ordures via des photos géolocalisées.
-                    </p>
-                    <div class="tags">
-                        <span>Android</span>
-                        <span>UI/UX Design</span>
-                        <span>GPS / Géolocalisation</span>
-                    </div>
-                    <button class="project-link-btn" onclick="switchTab('contact')">
-                        <span>En savoir plus</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- PROJET N°03 -->
-            <div class="project-feature">
-                <div class="project-visual">
-                    <i class="fas fa-drafting-compass"></i>
-                    <span class="overlay-badge">Prototypage UI/UX</span>
-                </div>
-                <div class="project-content">
-                    <span class="section-label">Projet 03</span>
-                    <h3>Watara</h3>
-                    <p style="color: var(--text-secondary); margin-bottom: 15px;">
-                        Prototype d'application axé sur une interface fluide et intuitive pour l'interaction avec des services géospatiaux.
-                    </p>
-                    <div class="tags">
-                        <span>UI/UX Design</span>
-                        <span>Prototypage</span>
-                    </div>
-                    <button class="project-link-btn" onclick="switchTab('contact')">
-                        <span>Voir la maquette</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </button>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- COMPÉTENCES -->
-    <section id="competences" class="tab-content">
-        <div class="container">
-            <div class="section-header" style="margin-bottom: 40px;">
-                <span class="section-label">Savoir-faire</span>
-                <h2 class="section-title">Mes <span>Compétences</span></h2>
-                <div class="section-divider"></div>
-            </div>
-
-            <div class="skills-grid-editorial">
-                <div class="skill-block">
-                    <h4><i class="fas fa-map-marked-alt"></i> SIG &amp; Géomatique</h4>
-                    <ul>
-                        <li>QGIS</li>
-                        <li>PostGIS</li>
-                        <li>Analyse spatiale</li>
-                        <li>Cartographie</li>
-                        <li>Webmapping</li>
-                    </ul>
-                </div>
-                <div class="skill-block">
-                    <h4><i class="fas fa-mobile-alt"></i> Développement Mobile</h4>
-                    <ul>
-                        <li>Android</li>
-                        <li>Géolocalisation GPS</li>
-                        <li>Intégration d'API</li>
-                    </ul>
-                </div>
-                <div class="skill-block">
-                    <h4><i class="fas fa-paint-brush"></i> UI/UX &amp; Design</h4>
-                    <ul>
-                        <li>Prototypage</li>
-                        <li>Design d'interfaces</li>
-                        <li>Ergonomie Web &amp; Mobile</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="tab-content">
-        <div class="container">
-            <div class="section-header" style="margin-bottom: 40px;">
-                <span class="section-label">Échangeons</span>
-                <h2 class="section-title">Me <span>Contacter</span></h2>
-                <div class="section-divider"></div>
-            </div>
-
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <p style="margin-bottom: 20px; color: var(--text-secondary);">
-                        Vous avez un projet de géomatique, de Webmapping ou de développement d'application mobile ? N'hésitez pas à me contacter.
-                    </p>
-                    <div class="contact-list">
-                        <div class="contact-item">
-                            <i class="fas fa-user"></i>
-                            <span>Okou Cedrick Yvan</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-graduation-cap"></i>
-                            <span>Licence 3 en Sciences et Technologies Géospatiales</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-        <div class="container">
-            <div class="socials">
-                <a href="https://github.com/yvanokou24" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-            </div>
-            <p>&copy; Okou Cedrick Yvan. Tous droits réservés.</p>
-        </div>
-    </footer>
-
-    <!-- JAVASCRIPT -->
-    <script>
-        // Gestion des onglets
-        function switchTab(tabId) {
-            const tabs = document.querySelectorAll('.tab-content');
-            const links = document.querySelectorAll('.tab-link');
-
-            tabs.forEach(tab => {
-                tab.classList.remove('active');
-            });
-
-            links.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('data-tab') === tabId) {
-                    link.classList.add('active');
-                }
-            });
-
-            const targetTab = document.getElementById(tabId);
-            if (targetTab) {
-                targetTab.classList.add('active');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            }
-
-            // Fermer le menu mobile si ouvert
-            document.getElementById('nav-links').classList.remove('open');
-        }
-
-        // Écouteurs d'événements sur la navigation
-        document.querySelectorAll('.tab-link').forEach(button => {
-            button.addEventListener('click', () => {
-                const tabId = button.getAttribute('data-tab');
-                switchTab(tabId);
-            });
-        });
-
-        // Toggle Thème (Clair / Sombre)
-        const themeToggleBtn = document.getElementById('theme-toggle');
-        themeToggleBtn.addEventListener('click', () => {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const icon = themeToggleBtn.querySelector('i');
-            
-            if (currentTheme === 'dark') {
-                document.documentElement.removeAttribute('data-theme');
-                icon.className = 'fas fa-moon';
-            } else {
-                document.documentElement.setAttribute('data-theme', 'dark');
-                icon.className = 'fas fa-sun';
-            }
-        });
-
-        // Menu Hamburger Mobile
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.getElementById('nav-links');
-
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('open');
-        });
-
-        // Effet Navbar au Scroll
-        window.addEventListener('scroll', () => {
-            const nav = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
-        });
-    </script>
-</body>
-</html>
+                    <span class="overlay-badge">Webmapping</span> 
