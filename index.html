@@ -76,6 +76,7 @@
         img {
             max-width: 100%;
             height: auto;
+            display: block;
         }
         .container {
             width: 100%;
@@ -224,7 +225,7 @@
         }
 
         /* ============================================
-           PAGE D'ACCUEIL FLUIDE & RESPONSIVE
+           PAGE D'ACCUEIL
            ============================================ */
         #accueil {
             min-height: 100vh;
@@ -233,7 +234,6 @@
             padding: clamp(100px, 15vh, 140px) 0 clamp(40px, 8vh, 80px);
             background: var(--bg-primary);
         }
-
         #accueil.hidden {
             display: none;
         }
@@ -245,11 +245,9 @@
             align-items: center;
             width: 100%;
         }
-
         .hero-text {
             text-align: left;
         }
-
         .hero-text .badge {
             display: inline-block;
             background: var(--accent);
@@ -262,7 +260,6 @@
             text-transform: uppercase;
             margin-bottom: 20px;
         }
-
         .hero-text h1 {
             font-family: var(--font-serif);
             font-size: clamp(2.4rem, 5vw, 3.8rem);
@@ -271,12 +268,10 @@
             margin-bottom: 12px;
             color: var(--text-primary);
         }
-
         .hero-text h1 span {
             color: var(--accent);
             font-style: italic;
         }
-
         .hero-text .subtitle {
             font-size: clamp(1rem, 2vw, 1.25rem);
             color: var(--text-secondary);
@@ -284,7 +279,6 @@
             margin-bottom: 20px;
             font-family: var(--font-serif);
         }
-
         .hero-text p {
             color: var(--text-secondary);
             font-size: clamp(0.95rem, 1.5vw, 1.05rem);
@@ -292,20 +286,17 @@
             margin-bottom: 30px;
             max-width: 540px;
         }
-
         .btn-group {
             display: flex;
             flex-wrap: wrap;
             gap: 15px;
         }
-
         .hero-image-wrapper {
             display: flex;
             justify-content: center;
             align-items: center;
             width: 100%;
         }
-
         .hero-card {
             width: 100%;
             max-width: clamp(220px, 30vw, 320px);
@@ -314,24 +305,21 @@
             -webkit-mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 98%);
             mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 98%);
         }
-
         .hero-card img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             object-position: center 15%;
-            display: block;
             border-radius: 20px;
             mix-blend-mode: multiply;
         }
-
         [data-theme="dark"] .hero-card img {
             mix-blend-mode: lighten;
             opacity: 0.9;
         }
 
         /* ============================================
-           AUTRES PAGES & CONTENU
+           AUTRES PAGES
            ============================================ */
         #about, #competences {
             background: var(--bg-primary);
@@ -399,12 +387,6 @@
             gap: clamp(30px, 5vw, 60px);
             align-items: start;
         }
-        .about-image {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-        }
         .about-image .photo-frame {
             width: 100%;
             max-width: 360px;
@@ -444,7 +426,7 @@
             color: var(--accent);
         }
 
-        /* SECTION PROJETS */
+        /* PROJETS */
         .project-feature {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -527,6 +509,7 @@
             box-shadow: 0 8px 20px rgba(200, 122, 110, 0.25);
         }
 
+        /* COMPÉTENCES */
         .skills-grid-editorial {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -562,6 +545,7 @@
             border: 1px solid var(--border-color);
         }
 
+        /* CONTACT */
         .contact-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -604,7 +588,7 @@
         }
 
         /* ============================================
-           MODALE CV DÉTAILLÉ
+           MODALE CV
            ============================================ */
         .cv-modal {
             display: none;
@@ -775,7 +759,44 @@
             color: var(--accent);
         }
 
-        /* MEDIA QUERIES & IMPRESSION */
+        /* ============================================
+           IMPRESSION
+           ============================================ */
+        @media print {
+            body * {
+                visibility: hidden;
+            }
+            .cv-modal,
+            .cv-modal * {
+                visibility: visible;
+            }
+            .cv-modal {
+                display: block !important;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: auto;
+                background: none !important;
+                backdrop-filter: none !important;
+                padding: 0 !important;
+                overflow: visible;
+            }
+            .cv-modal-card {
+                box-shadow: none;
+                border: none;
+                max-height: none;
+                padding: 30px;
+            }
+            .cv-modal-close,
+            .cv-actions {
+                display: none !important;
+            }
+        }
+
+        /* ============================================
+           MEDIA QUERIES
+           ============================================ */
         @media (max-width: 900px) {
             .hero-grid {
                 grid-template-columns: 1fr;
@@ -827,38 +848,12 @@
                 padding: 25px;
             }
         }
-
-        @media print {
-            body * {
-                visibility: hidden;
-            }
-            .cv-modal, .cv-modal.active {
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 100%;
-                height: auto;
-                background: none;
-                padding: 0;
-            }
-            .cv-modal-card, .cv-modal-card * {
-                visibility: visible;
-            }
-            .cv-modal-card {
-                box-shadow: none;
-                border: none;
-                max-height: none;
-            }
-            .cv-modal-close, .cv-actions {
-                display: none !important;
-            }
-        }
     </style>
 </head>
 <body>
 
     <!-- ==========================================
-    NAVIGATION RESPONSIVE (SANS LOGO)
+    NAVIGATION
     ========================================== -->
     <nav id="navbar">
         <div class="container nav-content">
@@ -898,26 +893,25 @@
                     <button class="btn btn-outline" onclick="openCvModal()">Voir mon CV</button>
                 </div>
             </div>
-            
             <div class="hero-image-wrapper">
                 <div class="hero-card">
-                    <img src="yvan photo.png" alt="Okou Cedrick Yvan" />
+                    <img src="yvan-photo.png" alt="Portrait d'Okou Cedrick Yvan, géomaticien et développeur mobile" />
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ==========================================
-    CONTENU DES ONGLETS
+    ONGLETS
     ========================================== -->
 
-    <!-- ===== À PROPOS ===== -->
+    <!-- À PROPOS -->
     <section id="about" class="tab-content">
         <div class="container">
             <div class="about-grid">
                 <div class="about-image">
                     <div class="photo-frame">
-                        <img src="yvan photo.png" alt="Okou Cedrick Yvan" onerror="this.style.display='none'; this.parentElement.querySelector('.fallback-icon').style.display='flex';" />
+                        <img src="yvan-photo.png" alt="Okou Cedrick Yvan" onerror="this.style.display='none'; this.parentElement.querySelector('.fallback-icon').style.display='flex';" />
                         <div class="fallback-icon" style="display: none;">
                             <i class="fas fa-user-circle"></i>
                         </div>
@@ -960,7 +954,7 @@
         </div>
     </section>
 
-    <!-- ===== PROJETS ===== -->
+    <!-- PROJETS -->
     <section id="projets" class="tab-content">
         <div class="container">
             <div class="section-header" style="margin-bottom: 40px;">
@@ -968,8 +962,8 @@
                 <h2 class="section-title">Mes <span>Projets</span></h2>
                 <div class="section-divider"></div>
             </div>
-            
-            <!-- PROJET N°01 -->
+
+            <!-- Projet 1 -->
             <div class="project-feature">
                 <a href="https://yvanokou24.github.io/yvan-mandoh__/" target="_blank" class="project-visual clickable-visual" title="Ouvrir la plateforme Webmapping">
                     <i class="fas fa-map-marked-alt"></i>
@@ -1000,7 +994,7 @@
                 </div>
             </div>
 
-            <!-- PROJET N°02 -->
+            <!-- Projet 2 -->
             <div class="project-feature reverse">
                 <div class="project-visual">
                     <i class="fas fa-recycle"></i>
@@ -1021,7 +1015,7 @@
                 </div>
             </div>
 
-            <!-- PROJET N°03 : WATARA -->
+            <!-- Projet 3 -->
             <div class="project-feature">
                 <a href="https://www.figma.com/proto/NAdFJ6GIdjLNtcDCPc70hV/Sans-titre?node-id=692-956&t=hDbGXAZ0AycLj70t-0&scaling=scale-down&content-scaling=fixed&page-id=491%3A2" target="_blank" class="project-visual clickable-visual" title="Tester le prototype Figma de WATARA">
                     <i class="fas fa-seedling"></i>
@@ -1053,7 +1047,7 @@
         </div>
     </section>
 
-    <!-- ===== COMPÉTENCES ===== -->
+    <!-- COMPÉTENCES -->
     <section id="competences" class="tab-content">
         <div class="container">
             <div style="margin-bottom: 40px;">
@@ -1061,7 +1055,6 @@
                 <h2 class="section-title">Compétences &amp; <span>Savoir-faire</span></h2>
                 <div class="section-divider"></div>
             </div>
-            
             <div class="skills-grid-editorial">
                 <div class="skill-block">
                     <h4><i class="fas fa-globe-africa"></i> SIG &amp; Carto</h4>
@@ -1103,7 +1096,7 @@
         </div>
     </section>
 
-    <!-- ===== CONTACT ===== -->
+    <!-- CONTACT -->
     <section id="contact" class="tab-content">
         <div class="container contact-grid">
             <div>
@@ -1134,7 +1127,6 @@
                     </button>
                 </div>
             </div>
-            
             <div>
                 <div class="quote-block">
                     <p>“ La cartographie est l'art de rendre visible l'invisible, de donner une voix aux territoires silencieux. ”</p>
@@ -1145,20 +1137,20 @@
     </section>
 
     <!-- ==========================================
-    MODALE : AFFICHER / TÉLÉCHARGER LE CV DÉTAILLÉ
+    MODALE CV (MISE À JOUR COMPLÈTE)
     ========================================== -->
     <div class="cv-modal" id="cvModal">
         <div class="cv-modal-card">
             <button class="cv-modal-close" onclick="closeCvModal()"><i class="fas fa-times"></i></button>
-            
+
             <div class="cv-header">
                 <div>
-                    <h2>Okou Cédrick <span>Yvan</span></h2>
-                    <div class="cv-subtitle">Géomaticien | Développeur Mobile &amp; Webmapping | UI/UX Designer</div>
+                    <h2>Yvan <span>Okou</span></h2>
+                    <div class="cv-subtitle">Spécialiste SIG · Designer UI/UX · Développeur Web & Mobile</div>
                     <div class="cv-contact-pills">
+                        <span><i class="fas fa-phone"></i> +225 05-44-86-23-81</span>
                         <span><i class="fas fa-envelope"></i> yvanokou8@gmail.com</span>
-                        <span><i class="fas fa-phone"></i> 05-44-86-23-81</span>
-                        <span><i class="fas fa-map-marker-alt"></i> Côte d'Ivoire</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Abidjan / Yamoussoukro</span>
                     </div>
                 </div>
             </div>
@@ -1167,104 +1159,103 @@
             <div class="cv-section">
                 <div class="cv-section-title"><i class="fas fa-user"></i> Profil</div>
                 <p style="font-size: 0.95rem; color: var(--text-secondary);">
-                    Titulaire d'une <strong>Licence en Sciences et Technologies Géospatiales</strong> de l'Université Virtuelle de Côte d'Ivoire (UVCI). Professionnel de la donnée spatiale, je combine la géomatique au <strong>développement mobile Android</strong> et au <strong>design UI/UX</strong>. Déterminé, rigoureux et autonome, je possède un fort esprit d'équipe et d'analyse.
+                    Diplômé d'une <strong>Licence en Informatique et Application numérique – spécialité Sciences et Technologies Géospatiales</strong> de l'Université Virtuelle de Côte d'Ivoire (UVCI). Passionné par la donnée spatiale et la création d'interfaces, je combine la géomatique, le design UI/UX et le développement web/mobile pour concevoir des applications ergonomiques répondant aux enjeux urbains et environnementaux.
                 </p>
             </div>
 
-            <!-- FORMATION -->
+            <!-- FORMATION & CERTIFICATS -->
             <div class="cv-section">
-                <div class="cv-section-title"><i class="fas fa-graduation-cap"></i> Formation &amp; Diplôme</div>
+                <div class="cv-section-title"><i class="fas fa-graduation-cap"></i> Formation &amp; Certificats</div>
                 <div class="cv-item">
                     <div class="cv-item-header">
-                        <span>Licence en Sciences et Technologies Géospatiales (Validée)</span>
+                        <span>Licence Informatique et Application numérique (Spécialité Sciences et Technologies Géospatiales)</span>
                         <span class="cv-item-date">2023 – 2026</span>
                     </div>
                     <div class="cv-item-desc">
-                        Université Virtuelle de Côte d'Ivoire (UVCI) — Diplôme obtenu avec mention Bien.
+                        Université Virtuelle de Côte d'Ivoire (UVCI) — Abidjan
+                    </div>
+                </div>
+                <div class="cv-item" style="margin-top: 10px;">
+                    <div class="cv-item-header">
+                        <span>Certificats complémentaires</span>
+                    </div>
+                    <div class="cv-item-desc">
+                        <ul>
+                            <li><strong>Système d’Information Géographique (SIG)</strong> – Coursera</li>
+                            <!-- CORRECTION : CGI devient GGI -->
+                            <li><strong>Design UI/UX et Développement mobile</strong> – GGI</li>
+                        </ul>
                     </div>
                 </div>
             </div>
 
             <!-- PROJETS & EXPÉRIENCES -->
             <div class="cv-section">
-                <div class="cv-section-title"><i class="fas fa-briefcase"></i> Projets &amp; Expériences</div>
+                <div class="cv-section-title"><i class="fas fa-briefcase"></i> Projets &amp; Réalisations</div>
+
                 <div class="cv-item">
                     <div class="cv-item-header">
-                        <span>Projet de Fin d'Études (Soutenance de Licence)</span>
+                        <span>Abobo H B TradeMap</span>
                         <span class="cv-item-date">2026</span>
                     </div>
                     <div class="cv-item-desc">
-                        <strong>Cartographie, analyse spatiale et Webmapping :</strong>
-                        <ul>
-                            <li>Numérisation et structuration des activités commerciales de la zone Abobo Houphouët-Boigny (Rue Professeur Koné Tiémoman).</li>
-                            <li>Collecte de données spatiales sur le terrain, modélisation PostGIS et publication de carte interactive (<a href="https://yvanokou24.github.io/yvan-mandoh__/" target="_blank" style="color: var(--accent); font-weight: 600;">Consulter en ligne</a>).</li>
-                        </ul>
+                        Application Webmapping interactive permettant de visualiser et de numériser les activités commerciales de la zone Abobo Houphouët-Boigny.
                     </div>
                 </div>
+
                 <div class="cv-item">
                     <div class="cv-item-header">
-                        <span>WATARA — Prototype UI/UX AgTech (Figma)</span>
+                        <span>WATARA App</span>
                         <span class="cv-item-date">2026</span>
                     </div>
                     <div class="cv-item-desc">
-                        <ul>
-                            <li>Conception UI/UX et prototypage haute fidélité d'une application d'agriculture intelligente (IoT &amp; IA).</li>
-                            <li>Création de workflows interactifs complexes pour le suivi de l'irrigation et la gestion des parcelles.</li>
-                        </ul>
+                        Prototype interactif haute fidélité d’une plateforme agricole intelligente. Combine capteurs IoT et IA pour optimiser la gestion de l’eau, maximiser les rendements et promouvoir une agriculture durable.
                     </div>
                 </div>
+
                 <div class="cv-item">
                     <div class="cv-item-header">
-                        <span>Bénévole — CAN 2023 en Côte d'Ivoire</span>
-                        <span class="cv-item-date">2023 – 2024</span>
+                        <span>SalubriCI</span>
+                        <span class="cv-item-date">En cours</span>
                     </div>
                     <div class="cv-item-desc">
-                        <ul>
-                            <li>Sensibilisation et communication avec le public.</li>
-                            <li>Gestion des relations avec différents groupes d'usagers.</li>
-                            <li>Organisation, animation d'activités, travail en équipe et gestion de terrain.</li>
-                        </ul>
+                        Application mobile Android permettant aux citoyens de signaler les dépôts sauvages de déchets via une photo géolocalisée.
                     </div>
                 </div>
             </div>
 
-            <!-- COMPÉTENCES -->
+            <!-- COMPÉTENCES CLÉS -->
             <div class="cv-section">
-                <div class="cv-section-title"><i class="fas fa-cogs"></i> Compétences Clés</div>
+                <div class="cv-section-title"><i class="fas fa-cogs"></i> Compétences</div>
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; font-size: 0.9rem;">
                     <div><strong>SIG &amp; Cartographie :</strong> QGIS, Analyse Spatiale</div>
                     <div><strong>Bases de données :</strong> PostgreSQL / PostGIS</div>
                     <div><strong>Développement Mobile :</strong> Android (Java/Kotlin)</div>
-                    <div><strong>Webmapping &amp; Web :</strong> Leaflet, Cartes interactives, HTML/CSS</div>
+                    <div><strong>Webmapping &amp; Web :</strong> Leaflet, Cartes interactives, HTML/CSS/JS</div>
                     <div><strong>UI/UX Design :</strong> Figma, Prototypage &amp; Ergonomie</div>
-                    <div><strong>Bureautique :</strong> Microsoft Word, Excel</div>
+                    <div><strong>Bureautique :</strong> Word, Excel, PowerPoint</div>
                 </div>
             </div>
 
-            <!-- CERTIFICATIONS & INTÉRÊTS -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;">
-                <div class="cv-section">
-                    <div class="cv-section-title"><i class="fas fa-certificate"></i> Certifications</div>
-                    <p style="font-size: 0.9rem; color: var(--text-secondary);">
-                        • <strong>Système d'Information Géographique (SIG)</strong> — Coursera
-                    </p>
-                </div>
-                <div class="cv-section">
-                    <div class="cv-section-title"><i class="fas fa-heart"></i> Intérêts</div>
-                    <p style="font-size: 0.9rem; color: var(--text-secondary);">
-                        • <strong>Sports :</strong> Football<br>
-                        • <strong>Musique :</strong> Rap, Pop, Gospel
-                    </p>
+            <!-- QUALITÉS -->
+            <div class="cv-section">
+                <div class="cv-section-title"><i class="fas fa-star"></i> Qualités</div>
+                <div style="display: flex; flex-wrap: wrap; gap: 10px; font-size: 0.9rem; color: var(--text-secondary);">
+                    <span style="background: var(--bg-secondary); padding: 4px 14px; border-radius: 20px;">Créativité</span>
+                    <span style="background: var(--bg-secondary); padding: 4px 14px; border-radius: 20px;">Capacité d'adaptation</span>
+                    <span style="background: var(--bg-secondary); padding: 4px 14px; border-radius: 20px;">Excellentes compétences relationnelles</span>
+                    <span style="background: var(--bg-secondary); padding: 4px 14px; border-radius: 20px;">Esprit d'équipe</span>
+                    <span style="background: var(--bg-secondary); padding: 4px 14px; border-radius: 20px;">Orientation résultats</span>
                 </div>
             </div>
 
-            <!-- ACTIONS DU CV -->
+            <!-- ACTIONS -->
             <div class="cv-actions">
                 <a href="cv.pdf" download class="btn" style="background: var(--text-primary); color: var(--bg-primary) !important;">
-                    <i class="fas fa-download"></i> Télécharger Fichier PDF
+                    <i class="fas fa-download"></i> Télécharger le PDF
                 </a>
                 <button onclick="window.print()" class="btn">
-                    <i class="fas fa-print"></i> Imprimer / Enregistrer PDF
+                    <i class="fas fa-print"></i> Imprimer / Enregistrer en PDF
                 </button>
             </div>
         </div>
@@ -1284,7 +1275,7 @@
     </footer>
 
     <!-- ==========================================
-    JAVASCRIPT ACCESSIBLE ET ADAPTATIF
+    JAVASCRIPT
     ========================================== -->
     <script>
         const tabs = document.querySelectorAll('.tab-link');
@@ -1318,7 +1309,6 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        /* GESTION MODALE CV */
         function openCvModal() {
             cvModal.classList.add('active');
             document.body.style.overflow = 'hidden';
@@ -1354,10 +1344,10 @@
             else navbar.classList.remove('scrolled');
         });
 
-        /* GESTION THÈME SOMBRE / CLAIR */
+        // Thème
         const toggleBtn = document.getElementById('theme-toggle');
         const currentTheme = localStorage.getItem('theme') || 'light';
-        
+
         if (currentTheme === 'dark') {
             document.documentElement.setAttribute('data-theme', 'dark');
             toggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
@@ -1378,6 +1368,7 @@
             }
         });
 
+        // Exposer globalement
         window.switchTab = switchTab;
         window.openCvModal = openCvModal;
         window.closeCvModal = closeCvModal;
