@@ -107,12 +107,6 @@
             color: var(--accent);
             font-style: italic;
         }
-        .section-subtitle {
-            color: var(--text-secondary);
-            font-size: clamp(0.95rem, 2vw, 1.1rem);
-            max-width: 560px;
-            font-weight: 400;
-        }
         .section-divider {
             width: 60px;
             height: 2px;
@@ -232,10 +226,6 @@
             align-items: center;
             padding: clamp(100px, 15vh, 140px) 0 clamp(40px, 8vh, 80px);
             background: var(--bg-primary);
-        }
-
-        #accueil.hidden {
-            display: none;
         }
 
         .hero-grid {
@@ -381,16 +371,6 @@
             background: var(--accent-hover);
             transform: translateY(-3px);
             box-shadow: 0 12px 35px rgba(200, 122, 110, 0.25);
-        }
-        .btn-outline {
-            background: transparent;
-            color: var(--text-primary) !important;
-            border: 2px solid var(--border-color);
-        }
-        .btn-outline:hover {
-            background: var(--text-primary);
-            color: var(--bg-primary) !important;
-            border-color: var(--text-primary);
         }
 
         .about-grid {
@@ -589,167 +569,6 @@
             font-size: 1.2rem;
             flex-shrink: 0;
         }
-        .quote-block {
-            background: var(--bg-card);
-            padding: 24px 30px;
-            border-radius: 12px;
-            border-left: 4px solid var(--accent);
-            box-shadow: var(--shadow);
-            margin-bottom: 20px;
-        }
-        .quote-block p {
-            font-family: var(--font-serif);
-            font-size: 1.15rem;
-            font-style: italic;
-        }
-
-        /* ============================================
-           MODALE CV DÉTAILLÉ
-           ============================================ */
-        .cv-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.75);
-            backdrop-filter: blur(8px);
-            z-index: 2000;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            overflow-y: auto;
-        }
-        .cv-modal.active {
-            display: flex;
-        }
-        .cv-modal-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 20px;
-            max-width: 800px;
-            width: 100%;
-            max-height: 90vh;
-            overflow-y: auto;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
-            position: relative;
-            padding: 40px;
-        }
-        .cv-modal-close {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: var(--bg-secondary);
-            border: none;
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-primary);
-            font-size: 1.1rem;
-            transition: var(--transition);
-        }
-        .cv-modal-close:hover {
-            background: var(--accent);
-            color: #fff;
-        }
-        .cv-header {
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 20px;
-            margin-bottom: 25px;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        .cv-header h2 {
-            font-family: var(--font-serif);
-            font-size: 2.2rem;
-            color: var(--text-primary);
-        }
-        .cv-header h2 span {
-            color: var(--accent);
-        }
-        .cv-header .cv-subtitle {
-            font-weight: 600;
-            color: var(--accent);
-            font-size: 1.05rem;
-            margin-top: 4px;
-        }
-        .cv-contact-pills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 12px;
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-        }
-        .cv-contact-pills span {
-            background: var(--bg-secondary);
-            padding: 4px 12px;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-        .cv-section {
-            margin-bottom: 25px;
-        }
-        .cv-section-title {
-            font-family: var(--font-serif);
-            font-size: 1.3rem;
-            color: var(--text-primary);
-            border-bottom: 1.5px solid var(--accent);
-            padding-bottom: 6px;
-            margin-bottom: 14px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .cv-section-title i {
-            color: var(--accent);
-            font-size: 1.1rem;
-        }
-        .cv-item {
-            margin-bottom: 14px;
-        }
-        .cv-item-header {
-            display: flex;
-            justify-content: space-between;
-            font-weight: 600;
-            color: var(--text-primary);
-            font-size: 0.95rem;
-        }
-        .cv-item-date {
-            color: var(--accent);
-            font-size: 0.85rem;
-        }
-        .cv-item-desc {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            margin-top: 4px;
-        }
-        .cv-item-desc ul {
-            padding-left: 18px;
-            margin-top: 6px;
-        }
-        .cv-item-desc li {
-            margin-bottom: 4px;
-        }
-        .cv-actions {
-            display: flex;
-            gap: 15px;
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid var(--border-color);
-            justify-content: flex-end;
-            flex-wrap: wrap;
-        }
 
         /* FOOTER */
         footer {
@@ -775,7 +594,7 @@
             color: var(--accent);
         }
 
-        /* MEDIA QUERIES & IMPRESSION */
+        /* MEDIA QUERIES */
         @media (max-width: 900px) {
             .hero-grid {
                 grid-template-columns: 1fr;
@@ -823,43 +642,12 @@
             .contact-list .contact-item {
                 border-radius: 12px;
             }
-            .cv-modal-card {
-                padding: 25px;
-            }
-        }
-
-        @media print {
-            body * {
-                visibility: hidden;
-            }
-            .cv-modal, .cv-modal.active {
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 100%;
-                height: auto;
-                background: none;
-                padding: 0;
-            }
-            .cv-modal-card, .cv-modal-card * {
-                visibility: visible;
-            }
-            .cv-modal-card {
-                box-shadow: none;
-                border: none;
-                max-height: none;
-            }
-            .cv-modal-close, .cv-actions {
-                display: none !important;
-            }
         }
     </style>
 </head>
 <body>
 
-    <!-- ==========================================
-    NAVIGATION RESPONSIVE (SANS LOGO)
-    ========================================== -->
+    <!-- NAVIGATION RESPONSIVE -->
     <nav id="navbar">
         <div class="container nav-content">
             <ul class="nav-links" id="nav-links">
@@ -880,10 +668,8 @@
         </div>
     </nav>
 
-    <!-- ==========================================
-    PAGE D'ACCUEIL
-    ========================================== -->
-    <section id="accueil">
+    <!-- PAGE D'ACCUEIL -->
+    <section id="accueil" class="tab-content active" style="padding-top: clamp(100px, 15vh, 140px);">
         <div class="container hero-grid">
             <div class="hero-text">
                 <div class="badge">Géomaticien, Designer &amp; Développeur Mobile</div>
@@ -895,7 +681,6 @@
                 </p>
                 <div class="btn-group">
                     <button class="btn" onclick="switchTab('projets')">Voir mes projets</button>
-                    <button class="btn btn-outline" onclick="openCvModal()">Voir mon CV</button>
                 </div>
             </div>
             
@@ -907,11 +692,7 @@
         </div>
     </section>
 
-    <!-- ==========================================
-    CONTENU DES ONGLETS
-    ========================================== -->
-
-    <!-- ===== À PROPOS ===== -->
+    <!-- À PROPOS -->
     <section id="about" class="tab-content">
         <div class="container">
             <div class="about-grid">
@@ -960,7 +741,7 @@
         </div>
     </section>
 
-    <!-- ===== PROJETS ===== -->
+    <!-- PROJETS -->
     <section id="projets" class="tab-content">
         <div class="container">
             <div class="section-header" style="margin-bottom: 40px;">
@@ -976,412 +757,221 @@
                     <span class="overlay-badge">Webmapping</span>
                 </a>
                 <div class="project-content">
-                    <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); font-weight: 600;">Projet n°01</span>
-                    <h3 style="font-family: var(--font-serif); font-size: 2rem; margin: 5px 0 15px;">
-                        <a href="https://yvanokou24.github.io/yvan-mandoh__/" target="_blank" style="color: inherit;">
-                            Abobo <span style="color: var(--accent);">Trade Map</span>
-                        </a>
-                    </h3>
+                    <span class="section-label">Projet 01</span>
+                    <h3>Abobo Trade Map</h3>
                     <p style="color: var(--text-secondary); margin-bottom: 15px;">
-                        Plateforme de Webmapping interactive permettant de visualiser, numériser et structurer
-                        la cartographie des activités commerciales de la zone Abobo Houphouët-Boigny.
+                        Plateforme de Webmapping interactive dédiée à la visualisation et à la cartographie des activités commerciales dans la commune d'Abobo (Houphouët-Boigny).
                     </p>
                     <div class="tags">
-                        <span>Leaflet</span>
+                        <span>Webmapping</span>
                         <span>QGIS</span>
                         <span>PostGIS</span>
-                        <span>Webmapping</span>
+                        <span>Analyse Spatiale</span>
                     </div>
-                    <div>
-                        <a href="https://yvanokou24.github.io/yvan-mandoh__/" target="_blank" class="project-link-btn">
-                            <i class="fas fa-external-link-alt"></i> Consulter la carte interactive
-                        </a>
-                    </div>
+                    <a href="https://yvanokou24.github.io/yvan-mandoh__/" target="_blank" class="project-link-btn">
+                        <span>Explorer la carte</span>
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
                 </div>
             </div>
 
             <!-- PROJET N°02 -->
             <div class="project-feature reverse">
                 <div class="project-visual">
-                    <i class="fas fa-recycle"></i>
-                    <span class="overlay-badge" style="background: #D4A373;">En cours</span>
+                    <i class="fas fa-mobile-alt"></i>
+                    <span class="overlay-badge">Mobile Android</span>
                 </div>
                 <div class="project-content">
-                    <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); font-weight: 600;">Projet n°02</span>
-                    <h3 style="font-family: var(--font-serif); font-size: 2rem; margin: 5px 0 15px;">Salubri<span style="color: var(--accent);">CI</span></h3>
+                    <span class="section-label">Projet 02</span>
+                    <h3>SaluBriCI</h3>
                     <p style="color: var(--text-secondary); margin-bottom: 15px;">
-                        Application mobile Android géospatiale permettant aux citoyens de signaler
-                        les dépôts sauvages de déchets en prenant une photo géolocalisée.
+                        Application mobile participative permettant aux citoyens de signaler facilement les dépôts sauvages d'ordures via des photos géolocalisées.
                     </p>
                     <div class="tags">
                         <span>Android</span>
-                        <span>Figma</span>
-                        <span>GPS</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PROJET N°03 : WATARA -->
-            <div class="project-feature">
-                <a href="https://www.figma.com/proto/NAdFJ6GIdjLNtcDCPc70hV/Sans-titre?node-id=692-956&t=hDbGXAZ0AycLj70t-0&scaling=scale-down&content-scaling=fixed&page-id=491%3A2" target="_blank" class="project-visual clickable-visual" title="Tester le prototype Figma de WATARA">
-                    <i class="fas fa-seedling"></i>
-                    <span class="overlay-badge" style="background: #2A9D8F;">UI/UX &amp; AgTech</span>
-                </a>
-                <div class="project-content">
-                    <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); font-weight: 600;">Projet n°03</span>
-                    <h3 style="font-family: var(--font-serif); font-size: 2rem; margin: 5px 0 15px;">
-                        <a href="https://www.figma.com/proto/NAdFJ6GIdjLNtcDCPc70hV/Sans-titre?node-id=692-956&t=hDbGXAZ0AycLj70t-0&scaling=scale-down&content-scaling=fixed&page-id=491%3A2" target="_blank" style="color: inherit;">
-                            WATARA <span style="color: var(--accent);">App</span>
-                        </a>
-                    </h3>
-                    <p style="color: var(--text-secondary); margin-bottom: 15px;">
-                        Prototype interactif haute fidélité d'une plateforme agricole intelligente. WATARA combine capteurs IoT et IA pour optimiser la gestion de l'eau, maximiser les rendements et promouvoir une agriculture durable.
-                    </p>
-                    <div class="tags">
-                        <span>Figma</span>
                         <span>UI/UX Design</span>
-                        <span>Prototypage Interactif</span>
-                        <span>AgTech / IoT</span>
+                        <span>GPS / Géolocalisation</span>
                     </div>
-                    <div>
-                        <a href="https://www.figma.com/proto/NAdFJ6GIdjLNtcDCPc70hV/Sans-titre?node-id=692-956&t=hDbGXAZ0AycLj70t-0&scaling=scale-down&content-scaling=fixed&page-id=491%3A2" target="_blank" class="project-link-btn">
-                            <i class="fab fa-figma"></i> Tester le prototype interactif
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== COMPÉTENCES ===== -->
-    <section id="competences" class="tab-content">
-        <div class="container">
-            <div style="margin-bottom: 40px;">
-                <span class="section-label">Expertise</span>
-                <h2 class="section-title">Compétences &amp; <span>Savoir-faire</span></h2>
-                <div class="section-divider"></div>
-            </div>
-            
-            <div class="skills-grid-editorial">
-                <div class="skill-block">
-                    <h4><i class="fas fa-globe-africa"></i> SIG &amp; Carto</h4>
-                    <ul>
-                        <li>QGIS</li>
-                        <li>ArcGIS Online</li>
-                        <li>KoboToolbox</li>
-                        <li>PostGIS / SQL</li>
-                        <li>Leaflet</li>
-                    </ul>
-                </div>
-                <div class="skill-block">
-                    <h4><i class="fas fa-pencil-ruler"></i> UI/UX Design</h4>
-                    <ul>
-                        <li>Figma</li>
-                        <li>Prototypage</li>
-                        <li>UX Research</li>
-                        <li>Ergonomie</li>
-                    </ul>
-                </div>
-                <div class="skill-block">
-                    <h4><i class="fas fa-code"></i> Dev Mobile &amp; Web</h4>
-                    <ul>
-                        <li>Android (Java/Kotlin)</li>
-                        <li>Développement Mobile</li>
-                        <li>HTML5 / CSS3</li>
-                        <li>JavaScript</li>
-                    </ul>
-                </div>
-                <div class="skill-block">
-                    <h4><i class="fas fa-brain"></i> Soft Skills</h4>
-                    <ul>
-                        <li>Rigueur</li>
-                        <li>Gestion de projet</li>
-                        <li>Autonomie</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== CONTACT ===== -->
-    <section id="contact" class="tab-content">
-        <div class="container contact-grid">
-            <div>
-                <span class="section-label">Collaboration</span>
-                <h2 class="section-title">Discutons <span>ensemble</span></h2>
-                <div class="section-divider"></div>
-                <p style="color: var(--text-secondary); margin-bottom: 25px;">
-                    Un projet de cartographie, une application mobile ou une simple
-                    discussion autour de la donnée spatiale ? N'hésitez pas.
-                </p>
-                <div class="contact-list">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <a href="mailto:yvanokou8@gmail.com">yvanokou8@gmail.com</a>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <a href="tel:+2250544862381">+225 05 44 86 23 81</a>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fab fa-linkedin"></i>
-                        <a href="https://ci.linkedin.com/in/yvan-okou-52164b421" target="_blank">linkedin.com/in/yvan-okou-52164b421</a>
-                    </div>
-                </div>
-                <div>
-                    <button onclick="openCvModal()" class="btn">
-                        <i class="fas fa-file-pdf"></i> Télécharger / Consulter mon CV
+                    <button class="project-link-btn" onclick="switchTab('contact')">
+                        <span>En savoir plus</span>
+                        <i class="fas fa-arrow-right"></i>
                     </button>
                 </div>
             </div>
-            
-            <div>
-                <div class="quote-block">
-                    <p>“ La cartographie est l'art de rendre visible l'invisible, de donner une voix aux territoires silencieux. ”</p>
-                    <div style="margin-top: 10px; font-weight: 600; font-size: 0.9rem;">— Okou Cedrick Yvan</div>
+
+            <!-- PROJET N°03 -->
+            <div class="project-feature">
+                <div class="project-visual">
+                    <i class="fas fa-drafting-compass"></i>
+                    <span class="overlay-badge">Prototypage UI/UX</span>
+                </div>
+                <div class="project-content">
+                    <span class="section-label">Projet 03</span>
+                    <h3>Watara</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 15px;">
+                        Prototype d'application axé sur une interface fluide et intuitive pour l'interaction avec des services géospatiaux.
+                    </p>
+                    <div class="tags">
+                        <span>UI/UX Design</span>
+                        <span>Prototypage</span>
+                    </div>
+                    <button class="project-link-btn" onclick="switchTab('contact')">
+                        <span>Voir la maquette</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- COMPÉTENCES -->
+    <section id="competences" class="tab-content">
+        <div class="container">
+            <div class="section-header" style="margin-bottom: 40px;">
+                <span class="section-label">Savoir-faire</span>
+                <h2 class="section-title">Mes <span>Compétences</span></h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="skills-grid-editorial">
+                <div class="skill-block">
+                    <h4><i class="fas fa-map-marked-alt"></i> SIG &amp; Géomatique</h4>
+                    <ul>
+                        <li>QGIS</li>
+                        <li>PostGIS</li>
+                        <li>Analyse spatiale</li>
+                        <li>Cartographie</li>
+                        <li>Webmapping</li>
+                    </ul>
+                </div>
+                <div class="skill-block">
+                    <h4><i class="fas fa-mobile-alt"></i> Développement Mobile</h4>
+                    <ul>
+                        <li>Android</li>
+                        <li>Géolocalisation GPS</li>
+                        <li>Intégration d'API</li>
+                    </ul>
+                </div>
+                <div class="skill-block">
+                    <h4><i class="fas fa-paint-brush"></i> UI/UX &amp; Design</h4>
+                    <ul>
+                        <li>Prototypage</li>
+                        <li>Design d'interfaces</li>
+                        <li>Ergonomie Web &amp; Mobile</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ==========================================
-    MODALE : AFFICHER / TÉLÉCHARGER LE CV DÉTAILLÉ
-    ========================================== -->
-    <div class="cv-modal" id="cvModal">
-        <div class="cv-modal-card">
-            <button class="cv-modal-close" onclick="closeCvModal()"><i class="fas fa-times"></i></button>
-            
-            <div class="cv-header">
-                <div>
-                    <h2>Okou Cédrick <span>Yvan</span></h2>
-                    <div class="cv-subtitle">Géomaticien | Développeur Mobile &amp; Webmapping | UI/UX Designer</div>
-                    <div class="cv-contact-pills">
-                        <span><i class="fas fa-envelope"></i> yvanokou8@gmail.com</span>
-                        <span><i class="fas fa-phone"></i> 05-44-86-23-81</span>
-                        <span><i class="fas fa-map-marker-alt"></i> Côte d'Ivoire</span>
-                    </div>
-                </div>
+    <!-- CONTACT -->
+    <section id="contact" class="tab-content">
+        <div class="container">
+            <div class="section-header" style="margin-bottom: 40px;">
+                <span class="section-label">Échangeons</span>
+                <h2 class="section-title">Me <span>Contacter</span></h2>
+                <div class="section-divider"></div>
             </div>
 
-            <!-- PROFIL -->
-            <div class="cv-section">
-                <div class="cv-section-title"><i class="fas fa-user"></i> Profil</div>
-                <p style="font-size: 0.95rem; color: var(--text-secondary);">
-                    Titulaire d'une <strong>Licence en Sciences et Technologies Géospatiales</strong> de l'Université Virtuelle de Côte d'Ivoire (UVCI). Professionnel de la donnée spatiale, je combine la géomatique au <strong>développement mobile Android</strong> et au <strong>design UI/UX</strong>. Déterminé, rigoureux et autonome, je possède un fort esprit d'équipe et d'analyse.
-                </p>
-            </div>
-
-            <!-- FORMATION -->
-            <div class="cv-section">
-                <div class="cv-section-title"><i class="fas fa-graduation-cap"></i> Formation &amp; Diplôme</div>
-                <div class="cv-item">
-                    <div class="cv-item-header">
-                        <span>Licence en Sciences et Technologies Géospatiales (Validée)</span>
-                        <span class="cv-item-date">2023 – 2026</span>
-                    </div>
-                    <div class="cv-item-desc">
-                        Université Virtuelle de Côte d'Ivoire (UVCI) — Diplôme obtenu avec mention Bien.
-                    </div>
-                </div>
-            </div>
-
-            <!-- PROJETS & EXPÉRIENCES -->
-            <div class="cv-section">
-                <div class="cv-section-title"><i class="fas fa-briefcase"></i> Projets &amp; Expériences</div>
-                <div class="cv-item">
-                    <div class="cv-item-header">
-                        <span>Projet de Fin d'Études (Soutenance de Licence)</span>
-                        <span class="cv-item-date">2026</span>
-                    </div>
-                    <div class="cv-item-desc">
-                        <strong>Cartographie, analyse spatiale et Webmapping :</strong>
-                        <ul>
-                            <li>Numérisation et structuration des activités commerciales de la zone Abobo Houphouët-Boigny (Rue Professeur Koné Tiémoman).</li>
-                            <li>Collecte de données spatiales sur le terrain, modélisation PostGIS et publication de carte interactive (<a href="https://yvanokou24.github.io/yvan-mandoh__/" target="_blank" style="color: var(--accent); font-weight: 600;">Consulter en ligne</a>).</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="cv-item">
-                    <div class="cv-item-header">
-                        <span>WATARA — Prototype UI/UX AgTech (Figma)</span>
-                        <span class="cv-item-date">2026</span>
-                    </div>
-                    <div class="cv-item-desc">
-                        <ul>
-                            <li>Conception UI/UX et prototypage haute fidélité d'une application d'agriculture intelligente (IoT &amp; IA).</li>
-                            <li>Création de workflows interactifs complexes pour le suivi de l'irrigation et la gestion des parcelles.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="cv-item">
-                    <div class="cv-item-header">
-                        <span>Bénévole — CAN 2023 en Côte d'Ivoire</span>
-                        <span class="cv-item-date">2023 – 2024</span>
-                    </div>
-                    <div class="cv-item-desc">
-                        <ul>
-                            <li>Sensibilisation et communication avec le public.</li>
-                            <li>Gestion des relations avec différents groupes d'usagers.</li>
-                            <li>Organisation, animation d'activités, travail en équipe et gestion de terrain.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- COMPÉTENCES -->
-            <div class="cv-section">
-                <div class="cv-section-title"><i class="fas fa-cogs"></i> Compétences Clés</div>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; font-size: 0.9rem;">
-                    <div><strong>SIG &amp; Cartographie :</strong> QGIS, Analyse Spatiale</div>
-                    <div><strong>Bases de données :</strong> PostgreSQL / PostGIS</div>
-                    <div><strong>Développement Mobile :</strong> Android (Java/Kotlin)</div>
-                    <div><strong>Webmapping &amp; Web :</strong> Leaflet, Cartes interactives, HTML/CSS</div>
-                    <div><strong>UI/UX Design :</strong> Figma, Prototypage &amp; Ergonomie</div>
-                    <div><strong>Bureautique :</strong> Microsoft Word, Excel</div>
-                </div>
-            </div>
-
-            <!-- CERTIFICATIONS & INTÉRÊTS -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;">
-                <div class="cv-section">
-                    <div class="cv-section-title"><i class="fas fa-certificate"></i> Certifications</div>
-                    <p style="font-size: 0.9rem; color: var(--text-secondary);">
-                        • <strong>Système d'Information Géographique (SIG)</strong> — Coursera
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <p style="margin-bottom: 20px; color: var(--text-secondary);">
+                        Vous avez un projet de géomatique, de Webmapping ou de développement d'application mobile ? N'hésitez pas à me contacter.
                     </p>
+                    <div class="contact-list">
+                        <div class="contact-item">
+                            <i class="fas fa-user"></i>
+                            <span>Okou Cedrick Yvan</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Licence 3 en Sciences et Technologies Géospatiales</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="cv-section">
-                    <div class="cv-section-title"><i class="fas fa-heart"></i> Intérêts</div>
-                    <p style="font-size: 0.9rem; color: var(--text-secondary);">
-                        • <strong>Sports :</strong> Football<br>
-                        • <strong>Musique :</strong> Rap, Pop, Gospel
-                    </p>
-                </div>
-            </div>
-
-            <!-- ACTIONS DU CV -->
-            <div class="cv-actions">
-                <a href="cv.pdf" download class="btn" style="background: var(--text-primary); color: var(--bg-primary) !important;">
-                    <i class="fas fa-download"></i> Télécharger Fichier PDF
-                </a>
-                <button onclick="window.print()" class="btn">
-                    <i class="fas fa-print"></i> Imprimer / Enregistrer PDF
-                </button>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- ==========================================
-    FOOTER
-    ========================================== -->
+    <!-- FOOTER -->
     <footer>
         <div class="container">
             <div class="socials">
-                <a href="https://ci.linkedin.com/in/yvan-okou-52164b421" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="mailto:yvanokou8@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://github.com/yvanokou24" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
             </div>
-            <p>&copy; 2026 Okou Cedrick Yvan.</p>
+            <p>&copy; Okou Cedrick Yvan. Tous droits réservés.</p>
         </div>
     </footer>
 
-    <!-- ==========================================
-    JAVASCRIPT ACCESSIBLE ET ADAPTATIF
-    ========================================== -->
+    <!-- JAVASCRIPT -->
     <script>
-        const tabs = document.querySelectorAll('.tab-link');
-        const accueil = document.getElementById('accueil');
-        const tabContents = {
-            about: document.getElementById('about'),
-            projets: document.getElementById('projets'),
-            competences: document.getElementById('competences'),
-            contact: document.getElementById('contact')
-        };
-        const navLinks = document.getElementById('nav-links');
-        const hamburger = document.getElementById('hamburger');
-        const cvModal = document.getElementById('cvModal');
-
+        // Gestion des onglets
         function switchTab(tabId) {
-            if (tabId === 'accueil') {
-                accueil.classList.remove('hidden');
-                document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-            } else {
-                accueil.classList.add('hidden');
-                document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-                if (tabContents[tabId]) tabContents[tabId].classList.add('active');
-            }
+            const tabs = document.querySelectorAll('.tab-content');
+            const links = document.querySelectorAll('.tab-link');
 
             tabs.forEach(tab => {
                 tab.classList.remove('active');
-                if (tab.dataset.tab === tabId) tab.classList.add('active');
             });
 
-            navLinks.classList.remove('open');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            links.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('data-tab') === tabId) {
+                    link.classList.add('active');
+                }
+            });
+
+            const targetTab = document.getElementById(tabId);
+            if (targetTab) {
+                targetTab.classList.add('active');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            // Fermer le menu mobile si ouvert
+            document.getElementById('nav-links').classList.remove('open');
         }
 
-        /* GESTION MODALE CV */
-        function openCvModal() {
-            cvModal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeCvModal() {
-            cvModal.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-
-        cvModal.addEventListener('click', (e) => {
-            if (e.target === cvModal) closeCvModal();
+        // Écouteurs d'événements sur la navigation
+        document.querySelectorAll('.tab-link').forEach(button => {
+            button.addEventListener('click', () => {
+                const tabId = button.getAttribute('data-tab');
+                switchTab(tabId);
+            });
         });
 
-        tabs.forEach(tab => {
-            tab.addEventListener('click', () => switchTab(tab.dataset.tab));
+        // Toggle Thème (Clair / Sombre)
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        themeToggleBtn.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const icon = themeToggleBtn.querySelector('i');
+            
+            if (currentTheme === 'dark') {
+                document.documentElement.removeAttribute('data-theme');
+                icon.className = 'fas fa-moon';
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                icon.className = 'fas fa-sun';
+            }
         });
 
-        hamburger.addEventListener('click', (e) => {
-            e.stopPropagation();
+        // Menu Hamburger Mobile
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+
+        hamburger.addEventListener('click', () => {
             navLinks.classList.toggle('open');
         });
 
-        document.addEventListener('click', (e) => {
-            if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
-                navLinks.classList.remove('open');
-            }
-        });
-
-        const navbar = document.getElementById('navbar');
+        // Effet Navbar au Scroll
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 40) navbar.classList.add('scrolled');
-            else navbar.classList.remove('scrolled');
-        });
-
-        /* GESTION THÈME SOMBRE / CLAIR */
-        const toggleBtn = document.getElementById('theme-toggle');
-        const currentTheme = localStorage.getItem('theme') || 'light';
-        
-        if (currentTheme === 'dark') {
-            document.documentElement.setAttribute('data-theme', 'dark');
-            toggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
-        } else {
-            toggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
-        }
-
-        toggleBtn.addEventListener('click', () => {
-            const theme = document.documentElement.getAttribute('data-theme');
-            if (theme === 'dark') {
-                document.documentElement.removeAttribute('data-theme');
-                localStorage.setItem('theme', 'light');
-                toggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
             } else {
-                document.documentElement.setAttribute('data-theme', 'dark');
-                localStorage.setItem('theme', 'dark');
-                toggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
+                nav.classList.remove('scrolled');
             }
         });
-
-        window.switchTab = switchTab;
-        window.openCvModal = openCvModal;
-        window.closeCvModal = closeCvModal;
     </script>
-
 </body>
 </html>
